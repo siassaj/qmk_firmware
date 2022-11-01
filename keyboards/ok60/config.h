@@ -15,18 +15,9 @@ You should have received a copy of the GNU General Public License
 along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef CONFIG_H
-#define CONFIG_H
+#pragma once
 
 #include "config_common.h"
-
-/* USB Device descriptor parameter */
-#define VENDOR_ID       0xFEED
-#define PRODUCT_ID      0x6060
-#define DEVICE_VER      0x0001
-#define MANUFACTURER    OK60
-#define PRODUCT         OK60
-#define DESCRIPTION     qmk keyboard firmware for OK60
 
 /* key matrix size */
 #define MATRIX_ROWS 5
@@ -44,7 +35,6 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
 #define MATRIX_ROW_PINS { B5, B4, D7, D6, D4 }
 #define MATRIX_COL_PINS { D0, D1, D2, D3, D5, B6, C6, C7, F1, F0, E6, B3, B2, B1, B0 }
-#define UNUSED_PINS
 
 #define BACKLIGHT_PIN B7
 
@@ -52,7 +42,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 #define DIODE_DIRECTION COL2ROW
 
 /* Debounce reduces chatter (unintended double-presses) - set 0 if debouncing is not needed */
-#define DEBOUNCING_DELAY 5
+#define DEBOUNCE 5
 
 /* define if matrix has ghost (lacks anti-ghosting diodes) */
 //#define MATRIX_HAS_GHOST
@@ -66,19 +56,9 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 /* Locking resynchronize hack */
 #define LOCKING_RESYNC_ENABLE
 
-/* key combination for command */
-#define IS_COMMAND() ( \
-    keyboard_report->mods == (MOD_BIT(KC_LSHIFT) | MOD_BIT(KC_RSHIFT)) \
-)
-
-/* prevent stuck modifiers */
-#define PREVENT_STUCK_MODIFIERS
-
 #define RGB_DI_PIN F6
 #define RGBLIGHT_ANIMATIONS
 #define RGBLED_NUM 10
 #define RGBLIGHT_HUE_STEP 8
 #define RGBLIGHT_SAT_STEP 8
 #define RGBLIGHT_VAL_STEP 8
-
-#endif

@@ -1,4 +1,4 @@
-#include "66.h"
+#include QMK_KEYBOARD_H
 
 // Each layer gets a name for readability, which is then used in the keymap matrix below.
 // The underscores don't mean anything - you can have a layer called STUFF or any other name.
@@ -31,7 +31,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    */
 [_CL] = LAYOUT(
   _______, _______, _______,_______,_______,_______,_______,_______,_______,_______, _______,  _______,  _______,  _______, RGB_TOG,              RGB_VAI,
-  _______, _______, _______,_______,RESET,  _______,_______,_______,_______,_______, _______,  _______,  _______,  _______,                       RGB_VAD,
+  _______, _______, _______,_______,QK_BOOT,  _______,_______,_______,_______,_______, _______,  _______,  _______,  _______,                       RGB_VAD,
   _______, _______, MO(_CL),_______,_______,_______,_______,_______,_______,_______, _______,  _______,  _______,  _______,
   MO(_FL), _______, _______,_______,_______,_______,_______,_______,_______,_______, _______,  _______,  _______,  MO(_FL),               RGB_SAI,
   _______, _______, _______,_______,        RGB_MOD,RGB_MOD,                            _______,  _______,  _______,  _______, RGB_HUD,RGB_SAD,RGB_HUI),
