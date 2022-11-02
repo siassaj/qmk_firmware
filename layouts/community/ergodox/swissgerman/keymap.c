@@ -47,15 +47,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Keymap 0: Basic layer
  *
  * ,--------------------------------------------------.           ,--------------------------------------------------.
- * |   §    |   1  |   2  |   3  |   4  |   5  | LEFT |           | RIGHT|   6  |   7  |   8  |   9  |   0  |   '    |
+ * |   Â§    |   1  |   2  |   3  |   4  |   5  | LEFT |           | RIGHT|   6  |   7  |   8  |   9  |   0  |   '    |
  * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
- * | Del    |   Q  |   W  |   E  |   R  |   T  |  L1  |           |  L1  |   Z  |   U  |   I  |   O  |   P  |   ü    |
+ * | Del    |   Q  |   W  |   E  |   R  |   T  |  L1  |           |  L1  |   Z  |   U  |   I  |   O  |   P  |   Ã¼    |
  * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
- * | BkSp   | A /L2|   S  |   D  |   F  |   G  |------|           |------|   H  |   J  |   K  |   L  |ö / L2|ä / Cmd |
+ * | BkSp   | A /L2|   S  |   D  |   F  |   G  |------|           |------|   H  |   J  |   K  |   L  |Ã¶ / L2|Ã¤ / Cmd |
  * |--------+------+------+------+------+------| Hyper|           | Meh  |------+------+------+------+------+--------|
  * | LShift |Y/Ctrl|X/Alt |   C  |   V  |   B  |      |           |      |   N  |   M  |   ,  |./Alt |-/Ctrl| RShift |
  * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
- *   |< / L1|   ^  |   $  | Left | Right|                                       |  Up  | Down |AltGr |   ¨  | ~L1  |
+ *   |< / L1|   ^  |   $  | Left | Right|                                       |  Up  | Down |AltGr |   Â¨  | ~L1  |
  *   `----------------------------------'                                       `----------------------------------'
  *                                        ,-------------.       ,-------------.
  *                                        | App  | LGui |       | Alt  |Ctrl/Esc|
@@ -70,7 +70,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [BASE] = LAYOUT_ergodox(  // layer 0 : default
         // left hand
         KC_GRV,         KC_1,         KC_2,   KC_3,   KC_4,   KC_5,   KC_LEFT,
-        KC_DELT,        KC_Q,         KC_W,   KC_E,   KC_R,   KC_T,   TG(SYMB),
+        KC_DEL,         KC_Q,         KC_W,   KC_E,   KC_R,   KC_T,   TG(SYMB),
         KC_BSPC,        LT(MDIA, KC_A),KC_S,   KC_D,   KC_F,   KC_G,
         KC_LSFT,        CTL_T(KC_Z),  ALT_T(KC_X),   KC_C,   KC_V,   KC_B,   ALL_T(KC_NO),
         LT(SYMB,KC_NONUS_BSLASH), KC_EQL, KC_BSLS,  KC_LEFT,KC_RGHT,
@@ -82,7 +82,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	TG(SYMB),    KC_Y,   KC_U,   KC_I,   KC_O,   KC_P,             KC_LBRC,
 	KC_H,   KC_J,   KC_K,   KC_L,   LT(MDIA, KC_SCLN),GUI_T(KC_QUOT),
 	MEH_T(KC_NO),KC_N,   KC_M,   KC_COMM,ALT_T(KC_DOT), CTL_T(KC_SLSH),   KC_RSFT,
-                             KC_UP,  KC_DOWN,KC_RALT,KC_RBRC, KC_FN1,
+                             KC_UP,  KC_DOWN,KC_RALT,KC_RBRC, TT(SYMB),
              KC_LALT,CTL_T(KC_ESC),
              KC_PGUP,
              KC_PGDN,KC_TAB, KC_ENT
@@ -132,7 +132,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Keymap 2: Media and mouse keys
  *
  * ,--------------------------------------------------.           ,--------------------------------------------------.
- * | RESET  |      |      |      |      |      |      |           |      |      |      |      |      |      | RESET  |
+ * | QK_BOOT  |      |      |      |      |      |      |           |      |      |      |      |      |      | QK_BOOT  |
  * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
  * |        |      |      | MsUp |      |      |      |           |      |      |H_UL  |      |H_OL  |      |        |
  * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
@@ -152,7 +152,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 // MEDIA AND MOUSE
 [MDIA] = LAYOUT_ergodox(
-       RESET, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+       QK_BOOT, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
        KC_TRNS, KC_TRNS, KC_TRNS, KC_MS_U, KC_TRNS, KC_TRNS, KC_TRNS,
        KC_TRNS, KC_TRNS, KC_MS_L, KC_MS_D, KC_MS_R, KC_TRNS,
        KC_TRNS, KC_TRNS, KC_TRNS, HTML_CODE, KC_TRNS, HTML_BR, KC_TRNS,
@@ -161,7 +161,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                     KC_TRNS,
                                   KC_ENT, KC_TRNS, KC_TRNS,
     // right hand
-       KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, RESET,
+       KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, QK_BOOT,
        KC_TRNS,  KC_TRNS, HTML_UL, KC_TRNS, HTML_OL, KC_TRNS, KC_TRNS,
                  KC_TRNS, KC_TRNS, KC_TRNS, HTML_LI, KC_TRNS, KC_MPLY,
        KC_TRNS,  KC_TRNS, KC_TRNS, KC_MPRV, KC_MNXT, KC_TRNS, KC_TRNS,
@@ -170,10 +170,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        KC_TRNS,
        KC_TRNS, KC_TRNS, KC_WBAK
 ),
-};
-
-const uint16_t PROGMEM fn_actions[] = {
-    [1] = ACTION_LAYER_TAP_TOGGLE(SYMB)                // FN1 - Momentary Layer 1 (Symbols)
 };
 
 const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
@@ -226,7 +222,7 @@ void matrix_init_user(void) {
 // Runs constantly in the background, in a loop.
 void matrix_scan_user(void) {
 
-    uint8_t layer = biton32(layer_state);
+    uint8_t layer = get_highest_layer(layer_state);
 
     switch (layer) {
       // TODO: Make this relevant to the ErgoDox EZ.
@@ -274,7 +270,7 @@ void send_key(uint16_t keycode) {
 
 void go_back_based_on_tag(char* tag) {
   const int BRACKETS_AND_SLASH_LENGTH = 3;
-  
+
   for (int i=0; i < strlen(tag) + BRACKETS_AND_SLASH_LENGTH; i++) {
     send_key(KC_LEFT);
   }

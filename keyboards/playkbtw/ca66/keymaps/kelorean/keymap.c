@@ -11,9 +11,6 @@
 
 #include QMK_KEYBOARD_H
 
-// Helpful defines
-#define _______ KC_TRNS
-
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	//Base Layer
 	[0] = LAYOUT(
@@ -50,7 +47,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	//Layer4, soft reset on Tab
 	[4] = LAYOUT(
 		KC_NO, 			   KC_NO, 	 KC_NO,    KC_NO, 	KC_NO, 	 KC_NO,   KC_NO, 	KC_NO, 	 KC_NO, 	KC_NO, 	 KC_NO,   KC_NO, 	KC_NO, 		KC_NO, 	 KC_NO, 		KC_NO, 
-		RESET, 			   KC_NO, 	 KC_NO,    KC_NO, 	KC_NO, 	 KC_NO,   KC_NO, 	KC_NO, 	 KC_NO, 	KC_NO, 	 KC_NO,   KC_NO, 	KC_NO, 		KC_TRNS, 				KC_NO,
+		QK_BOOT, 			   KC_NO, 	 KC_NO,    KC_NO, 	KC_NO, 	 KC_NO,   KC_NO, 	KC_NO, 	 KC_NO, 	KC_NO, 	 KC_NO,   KC_NO, 	KC_NO, 		KC_TRNS, 				KC_NO,
 		KC_NO, 			   KC_NO, 	 KC_NO,    KC_NO, 	KC_NO, 	 KC_NO,   KC_NO, 	KC_NO, 	 KC_NO, 	KC_NO, 	 KC_NO,   KC_NO, 				KC_NO, 					KC_NO, 
 		KC_NO, KC_NO, 	   KC_NO, 	 KC_NO,    KC_NO, 	KC_NO, 	 KC_NO,	  KC_NO, 	KC_NO, 	 KC_NO, 	KC_NO, 	 KC_NO,   KC_NO, 	KC_NO,								KC_NO, 
 		KC_NO, 			   KC_NO, 	 KC_NO,    KC_NO, 			 KC_NO,   			KC_NO, 	 KC_NO, 	KC_NO, 	 		     KC_NO, KC_NO, KC_NO),

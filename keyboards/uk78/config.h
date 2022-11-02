@@ -15,18 +15,9 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef CONFIG_H
-#define CONFIG_H
+#pragma once
 
 #include "config_common.h"
-
-/* USB Device descriptor parameter */
-#define VENDOR_ID       0x554B /* Ascii */
-#define PRODUCT_ID      0x004E
-#define DEVICE_VER      0x0002
-#define MANUFACTURER    UK Keyboards
-#define PRODUCT         UK78
-#define DESCRIPTION     QMK keyboard firmware for UK78
 
 /* key matrix size */
 #define MATRIX_ROWS 5
@@ -35,7 +26,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 /* key matrix pins */
 #define MATRIX_ROW_PINS { F3, F2, F1, F0, A0 }
 #define MATRIX_COL_PINS { A2, A1, F5, F4, E6, E7, E5, E4, B7, D0, D1, D2, D3, D4, D5, D6, D7, B5, E0 }
-#define UNUSED_PINS
 
 /* COL2ROW or ROW2COL */
 #define DIODE_DIRECTION COL2ROW
@@ -47,21 +37,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #endif
 
 /* Set 0 if debouncing isn't needed */
-#define DEBOUNCING_DELAY 5
+#define DEBOUNCE 5
 
 /* Mechanical locking support. Use KC_LCAP, KC_LNUM or KC_LSCR instead in keymap */
 #define LOCKING_SUPPORT_ENABLE
 
 /* Locking resynchronize hack */
 #define LOCKING_RESYNC_ENABLE
-
-/* key combination for command */
-#define IS_COMMAND() ( \
-    keyboard_report->mods == (MOD_BIT(KC_LSHIFT) | MOD_BIT(KC_RSHIFT)) \
-)
-
-/* prevent stuck modifiers */
-#define PREVENT_STUCK_MODIFIERS
 
 /* ws2812b options */
 #define RGB_DI_PIN F6
@@ -71,6 +53,4 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define RGBLIGHT_HUE_STEP 8
 #define RGBLIGHT_SAT_STEP 8
 #define RGBLIGHT_VAL_STEP 8
-#endif
-
 #endif

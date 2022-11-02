@@ -25,7 +25,6 @@ enum mitosis_layers
 #define MOUSEKEY_WHEEL_TIME_TO_MAX 40
 
 // Fillers to make layering more clear
-#define _______ KC_TRNS
 #define XXX KC_NO
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -176,7 +175,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 
 void matrix_scan_user(void) {
-    uint8_t layer = biton32(layer_state);
+    uint8_t layer = get_highest_layer(layer_state);
 
     switch (layer) {
     	case _QWERTY:
@@ -206,5 +205,3 @@ void matrix_scan_user(void) {
 void matrix_init_user(void) {
 	set_unicode_input_mode(UC_LNX); // or UC_WINC
 };
-
-
